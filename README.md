@@ -19,7 +19,7 @@ print_warning_header(file, 10, 15, "invalid syntax",
                      "a variable name cannot contain an underscore");
 /*
 file:10:11: warning: invalid syntax: a variable name cannot contain an underscore
-this is an example of a line containing a syntax error in column 11;
+this is an example of a line containing a syntax warning in column 11;
            ^~~~~~~    
 */
 ```
