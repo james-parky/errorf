@@ -4,26 +4,18 @@ errorf is a C library for creating gcc style error and warning messages.
 
 ## Usage
 
+To generate gcc style error messages you can simply call `print_error_header()` with a valid file name, line and column number, reason, and supplmentary message:
 ```C
 #include "errorf.h"
-print_error_header(file, 10, 11, "invalid syntax",
+print_error_header("file.c", 10, 11, "invalid syntax",
                    "a variable name cannot contain an underscore");
-/*
-file:10:11: error: invalid syntax: a variable name cannot contain an underscore
+```
+This would generate the following error message in the terminal:
+```console
+file.c:10:11: error: invalid syntax: a variable name cannot contain an underscore
 this is an example of a line containing a syntax error in column 11;
            ^~~~~~~    
-*/
-
-#include "errorf.h"
-print_warning_header(file, 10, 11, "invalid syntax",
-                     "a variable name cannot contain an underscore");
-/*
-file:10:11: warning: invalid syntax: a variable name cannot contain an underscore
-this is an example of a line containing a syntax warning in column 11;
-           ^~~~~~~    
-*/
 ```
-
 
 ## Contributing
 
