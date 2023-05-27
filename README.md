@@ -4,7 +4,7 @@ errorf is a C library for creating gcc style error and warning messages.
 
 ## Usage
 
-To generate gcc style error messages you can simply call `print_error_header()` with a valid file name, line and column number, reason, and supplmentary message:
+To generate gcc style error messages you can simply call `print_error_header()` with a valid file name, line and column number, reason, and supplementary message:
 ```C
 #include "errorf.h"
 print_error_header("file.c", 10, 11, "invalid syntax",
