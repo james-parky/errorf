@@ -1,12 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <errno.h>
+#include <stddef.h>
 
 #include "errorf.h"
-
-
-
 
 
 void subst (char *s, const char from, const char to) {
@@ -71,11 +68,4 @@ void print_error_line (const size_t error_line_num, const char* file_name) {
         fgets(line_buf, LINE_MAX, file);
     fprintf(stderr, "%s%s", RESET, line_buf);
     fclose(file);
-}
-
-int main(){
-    print_warning_header("src/min.c", 5, 5,
-                         "you made a warning-worthy mistake", "lol");
-    print_error_line(5, "src/main.c");
-    print_underline("test", 5);
 }
